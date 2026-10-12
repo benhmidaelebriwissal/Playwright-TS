@@ -1,0 +1,38 @@
+import { test as base, expect } from '@playwright/test';
+import { HomePage } from '../pages/HomePage';
+import { LoginPage } from '../pages/LoginPage';
+import { RegisterPage } from '../pages/RegisterPage';
+import { AddProductPage } from '../pages/AddProductPage';
+import { ShoppingCartPage } from '../pages/ShoppingCartPage';
+
+type AppFixtures = {
+  homePage: HomePage;
+  loginPage: LoginPage;
+  registerPage: RegisterPage;
+  addProductPage: AddProductPage;
+  shoppingCartPage: ShoppingCartPage;
+};
+
+export const test = base.extend<AppFixtures>({
+  homePage: async ({ page }, use) => {
+    await use(new HomePage(page));
+  },
+
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
+
+  registerPage: async ({ page }, use) => {
+    await use(new RegisterPage(page));
+  },
+
+  addProductPage: async ({ page }, use) => {
+    await use(new AddProductPage(page));
+  },
+
+  shoppingCartPage: async ({ page }, use) => {
+    await use(new ShoppingCartPage(page));
+  },
+});
+
+export { expect };

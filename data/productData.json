@@ -1,0 +1,13 @@
+{
+  "book": {
+    "name": "Computing and Internet",
+    "category": "Books"
+  },
+  "searchTerms": {
+    "valid": "computer",
+    "unknown": "product-not-found-xyz"
+  },
+  "cart": {
+    "quantity": "2"
+  }
+}
